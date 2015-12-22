@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="calculator" verbose = "1">
+
+    <test name="Test: addition and subtraction of long and double values">
+        <groups>
+            <run>
+                <include name="suite" />
+                <include name="base" />
+                <include name="group" />
+                <include name="method" />
+                <include name="sumLong" />
+                <include name="subLong" />
+                <include name="sumDouble" />
+                <include name="subDouble" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.epam.calctest.test.SumAndSubCalculatorTest">
+                <methods>
+                    <exclude name="onePlusTwo.*" />
+                    <exclude name="tenMinusHundredLong" />
+                    <exclude name="tenMinusHundredDouble" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test: multiplication and division of long and double values">
+        <classes>
+            <class name="com.epam.calctest.test.MultAndDivTest" />
+        </classes>
+    </test>
+
+    <test name="Tests set for trigonometry operations checking">
+        <groups>
+            <run>
+                <exclude name="sinSimple" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.epam.calctest.test.TrigonometryTest" />
+        </classes>
+    </test>
+
+    <test name="Test: Pow() and sqrt() checking">
+        <classes>
+            <class name="com.epam.calctest.test.PowSqrtTest">
+                <methods>
+                    <include name="powBaseByExponent" />
+                    <include name="sqrtByArgument" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>  
